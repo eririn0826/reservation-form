@@ -109,19 +109,11 @@ button:hover {
 </div>
 
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwspjTRzBtr0ULaNkccTXy1Jv7AdL94VYz58BUv97ysvc9Yg368urMdDXnGsk2bDdIJ/exec"; 
-// ↑ GASのWebアプリURLをここに貼ってください
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwspjTRzBtr0ULaNkccTXy1Jv7AdL94VYz58BUv97ysvc9Yg368urMdDXnGsk2bDdIJ/exec";
 
 function checkStatus() {
   fetch(SCRIPT_URL + "?check=1")
-    .then(async r => {
-      try {
-        return await r.json();
-      } catch (e) {
-        const txt = await r.text();
-        throw new Error("JSON以外のレスポンス: " + txt.slice(0,100));
-      }
-    })
+    .then(r => r.json())
     .then(data => {
       const form = document.getElementById("formContainer");
       const msg = document.getElementById("msg");
@@ -152,14 +144,7 @@ document.getElementById("reserveForm").addEventListener("submit", e => {
   const formData = new FormData(e.target);
 
   fetch(SCRIPT_URL, { method: "POST", body: formData })
-    .then(async r => {
-      try {
-        return await r.json();
-      } catch (e) {
-        const txt = await r.text();
-        throw new Error("JSON以外のレスポンス: " + txt.slice(0,100));
-      }
-    })
+    .then(r => r.json())
     .then(res => {
       const form = document.getElementById("formContainer");
       const msg = document.getElementById("msg");
