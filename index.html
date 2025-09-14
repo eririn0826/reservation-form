@@ -151,7 +151,7 @@ document.getElementById("reserveForm").addEventListener("submit", e => {
 
       if (res.status === "ok") {
         form.style.display = "none";
-        msg.innerText = `予約完了（${res.current}/${res.limit}）`;
+        msg.innerText = `予約が完了しました`;
       } else {
         form.style.display = "none";
         msg.innerText = res.message;
