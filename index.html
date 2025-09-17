@@ -4,162 +4,173 @@
 <base target="_top">
 <style>
 body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+font-family: "Helvetica Neue", Arial, sans-serif;
+background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+margin: 0;
 }
+
 .container {
-  background: #fff;
-  padding: 2rem 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  width: 400px;
-  max-width: 90%;
-  text-align: center;
+background: #fff;
+padding: 2rem 2.5rem;
+border-radius: 12px;
+box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+width: 400px;
+max-width: 90%;
+text-align: center;
 }
+
 h1 {
-  font-size: 1.6rem;
-  color: #333;
-  margin-bottom: 1.5rem;
+font-size: 1.6rem;
+color: #333;
+margin-bottom: 1.5rem;
 }
+
 .form-group {
-  text-align: left;
-  margin-bottom: 1rem;
+text-align: left;
+margin-bottom: 1rem;
 }
+
 label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #555;
+display: block;
+margin-bottom: 0.5rem;
+font-weight: bold;
+color: #555;
 }
+
 input {
-  width: 100%;
-  padding: 0.7rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+width: 100%;
+padding: 0.7rem;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 1rem;
+transition: border-color 0.3s, box-shadow 0.3s;
 }
+
 input:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 6px rgba(0,123,255,0.3);
-  outline: none;
+border-color: #007bff;
+box-shadow: 0 0 6px rgba(0,123,255,0.3);
+outline: none;
 }
+
 button {
-  margin-top: 1rem;
-  width: 100%;
-  padding: 0.8rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s;
+margin-top: 1rem;
+width: 100%;
+padding: 0.8rem;
+font-size: 1rem;
+font-weight: bold;
+border: none;
+border-radius: 6px;
+background: linear-gradient(135deg, #007bff, #0056b3);
+color: white;
+cursor: pointer;
+transition: background 0.3s;
 }
+
 button:hover {
-  background: linear-gradient(135deg, #0056b3, #004099);
+background: linear-gradient(135deg, #0056b3, #004099);
 }
+
 #msg {
-  margin-top: 1rem;
-  font-weight: bold;
+margin-top: 1rem;
+font-weight: bold;
 }
+
 .full {
-  color: red;
-  font-size: 1.2rem;
+color: red;
+font-size: 1.2rem;
 }
+
 .waiting {
-  color: #555;
-  font-size: 1.1rem;
+color: #555;
+font-size: 1.1rem;
 }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1>【9月分】予約フォーム</h1>
+<h1>【9月分】予約フォーム</h1>
 
-  <div id="formContainer" style="display:none;">
-    <form id="reserveForm">
-      <div class="form-group">
-        <label for="lastName">姓</label>
-        <input type="text" id="lastName" name="lastName" required>
-      </div>
-      <div class="form-group">
-        <label for="firstName">名</label>
-        <input type="text" id="firstName" name="firstName" required>
-      </div>
-      <div class="form-group">
-        <label for="email">メールアドレス</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">電話番号</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <button type="submit">送信</button>
-    </form>
-  </div>
+<div id="formContainer" style="display:none;">
+<form id="reserveForm">
+<div class="form-group">
+<label for="lastName">姓</label>
+<input type="text" id="lastName" name="lastName" required>
+</div>
+<div class="form-group">
+<label for="firstName">名</label>
+<input type="text" id="firstName" name="firstName" required>
+</div>
+<div class="form-group">
+<label for="email">メールアドレス</label>
+<input type="email" id="email" name="email" required>
+</div>
+<div class="form-group">
+<label for="phone">電話番号</label>
+<input type="tel" id="phone" name="phone" required>
+</div>
+<button type="submit">送信</button>
+</form>
+</div>
 
-  <div id="msg"></div>
+<div id="msg"></div>
 </div>
 
 <script>
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwspjTRzBtr0ULaNkccTXy1Jv7AdL94VYz58BUv97ysvc9Yg368urMdDXnGsk2bDdIJ/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwm3Rb2Bc39vkbxW-c4TfbBxr0kUIkbVrYQ47bGnMizudfxwWkVup6cT6d07DpgBtwd/exec";
 
 function checkStatus() {
-  fetch(SCRIPT_URL + "?check=1")
-    .then(r => r.json())
-    .then(data => {
-      const form = document.getElementById("formContainer");
-      const msg = document.getElementById("msg");
+fetch(SCRIPT_URL + "?check=1")
+.then(r => r.json())
+.then(data => {
+const form = document.getElementById("formContainer");
+const msg = document.getElementById("msg");
 
-      if (data.status === "waiting") {
-        form.style.display = "none";
-        msg.innerHTML = `<p class="waiting">受付開始は ${new Date(data.start).toLocaleString("ja-JP")} です</p>`;
-      } else if (data.status === "full") {
-        form.style.display = "none";
-        msg.innerHTML = "<p class='full'>定員に達しました</p>";
-      } else if (data.status === "open") {
-        form.style.display = "block";
-        msg.innerHTML = "";
-      }
-    })
-    .catch(err => {
-      document.getElementById("msg").innerText = "エラーが発生しました: " + err;
-    });
+if (data.status === "waiting") {
+form.style.display = "none";
+msg.innerHTML = `<p class="waiting">受付開始は ${new Date(data.start).toLocaleString("ja-JP")} です</p>`;
+} else if (data.status === "full") {
+form.style.display = "none";
+msg.innerHTML = "<p class='full'>定員に達しました</p>";
+} else if (data.status === "open") {
+form.style.display = "block";
+msg.innerHTML = "";
+}
+})
+.catch(err => {
+document.getElementById("msg").innerText = "エラーが発生しました: " + err;
+});
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  checkStatus();
-  setInterval(checkStatus, 60000); // 1分ごと
+checkStatus();
+setInterval(checkStatus, 60000); // 1分ごと
 });
 
 document.getElementById("reserveForm").addEventListener("submit", e => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
+e.preventDefault();
+const formData = new FormData(e.target);
 
-  fetch(SCRIPT_URL, { method: "POST", body: formData })
-    .then(r => r.json())
-    .then(res => {
-      const form = document.getElementById("formContainer");
-      const msg = document.getElementById("msg");
+fetch(SCRIPT_URL, { method: "POST", body: formData })
+.then(r => r.json())
+.then(res => {
+const form = document.getElementById("formContainer");
+const msg = document.getElementById("msg");
 
-      if (res.status === "ok") {
-        form.style.display = "none";
-        msg.innerText = `予約が完了しました`;
-      } else {
-        form.style.display = "none";
-        msg.innerText = res.message;
-      }
-    })
-    .catch(err => {
-      document.getElementById("msg").innerText = "エラーが発生しました: " + err;
-    });
+if (res.status === "ok") {
+form.style.display = "none";
+msg.innerText = `予約が完了しました。後ほど手続きをメールでご案内いたします。`;
+} else {
+form.style.display = "none";
+msg.innerText = res.message;
+}
+})
+.catch(err => {
+document.getElementById("msg").innerText = "エラーが発生しました: " + err;
+});
 });
 </script>
 </body>
